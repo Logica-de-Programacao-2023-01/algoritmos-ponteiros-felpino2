@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+func main() {
+	x := 1
+	y := 4
+	var ptr *int = &x
+	var ptr2 *int = &y
+	swap(ptr, ptr2)
+	fmt.Print(*ptr, *ptr2)
+}
+
+func swap(ptr *int, ptr2 *int) (*int, *int) {
+	var ptr2keep = *ptr2
+	*ptr2 = *ptr
+	*ptr = ptr2keep
+
+	return ptr, ptr2
+}
